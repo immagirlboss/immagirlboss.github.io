@@ -26,7 +26,7 @@ Project images show the whole picture without cropping. The portrait fills its f
 
 ## Edit project details
 
-Each plaque is a native `<details class="project">` in `index.html`. Click anywhere on its collapsed plaque, or focus it and press Enter or Space, to expand the description, role, tools, and repository link. More than one plaque can stay open.
+Click a project plaque, or focus it and press Enter or Space, to open a centered project window with the description, role, tools, and repository link. Close it using **Back to projects**, **Escape**, or a click outside the window to return to the same place in the list. On browsers without dialog support, plaques expand inline. Digital Twin’s repository is marked coming soon.
 
 Edit the text inside that project's `.project-details` block to update the description or role. Edit its `.stack-list` items to change the tools. The short summary lives inside `.project-body`.
 

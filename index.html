@@ -80,6 +80,25 @@
     @media(prefers-reduced-motion:reduce){.project{transition:none}}
     @media(max-width:560px){.project-details{padding:24px 22px 26px}}
 
+
+    /* Centered project reading window */
+    html{scrollbar-gutter:stable}
+    .project-dialog{width:min(880px,calc(100% - 48px));max-height:calc(100dvh - 64px);padding:0;border:0;border-radius:14px;background:#fff;color:#111;box-shadow:0 24px 90px rgba(15,15,25,.25);overflow:auto;overscroll-behavior:contain}
+    .project-dialog::backdrop{background:rgba(25,25,32,.42);backdrop-filter:blur(4px)}
+    .dialog-toolbar{position:sticky;top:0;z-index:6;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 28px;background:#fff;border-bottom:1px solid #eeeeef}
+    .dialog-caption{font:.75rem/1.5 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+    .dialog-close{display:inline-flex;align-items:center;gap:12px;border:0;border-radius:24px;padding:10px 16px;background:#faf0f1;color:var(--red);font:700 .875rem/1.4 Arial,sans-serif;cursor:pointer}
+    .dialog-close:hover{background:#f5e1e4}.dialog-close:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+    .project-dialog .visual{height:clamp(220px,32vh,340px);border:0}
+    .project-dialog .project-body{padding:32px 40px 28px}
+    .project-dialog h3{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.045em;line-height:1.2;margin:12px 0}
+    .project-dialog p{color:#45454a;font-size:1rem;line-height:1.7;margin:0}
+    .project-dialog .expand-label{display:none}
+    .project-dialog .project-details{padding:28px 40px 36px}
+    .repo-coming-soon{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:20px;background:#faf0f1;color:var(--red);font-size:.875rem;font-weight:700;margin:0}
+    .repo-coming-soon:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+    .modal-projects .project-details{display:none}
+    @media(max-width:560px){.project-dialog{width:calc(100% - 24px);max-height:calc(100dvh - 24px);border-radius:10px}.dialog-toolbar{padding:12px 18px}.project-dialog .project-body{padding:24px}.project-dialog .project-details{padding:24px}.dialog-caption{font-size:.65rem}}
   </style>
 </head>
 <body>
@@ -95,7 +114,7 @@
       <section class="section" id="work" aria-labelledby="work-title"><div class="section-head"><h2 id="work-title">Selected work</h2><span class="number">01 / PROJECTS</span></div><div class="projects">
         <details class="project" id="project-digital-twin">
           <summary class="project-summary"><div class="visual cover twin"><img class="project-picture" src="assets/digital-twin.jpg" alt="Digital Twin project screenshot" loading="lazy" hidden><span class="ghost">01 / EXPERIMENT</span><strong>DIGITAL<br>TWIN</strong><span class="image-label">PROJECT IMAGE</span></div><div class="project-body"><span class="project-kicker">AI / Personalization</span><h3>Digital Twin</h3><p>A personalized language model experiment combining text and music signals.</p><span class="expand-label"><span class="closed-label">Read about the project</span><span class="open-label">Close project details</span><span class="toggle-icon" aria-hidden="true"></span></span></div></summary>
-          <div class="project-details"><div class="detail-section"><h4>Project</h4><p>An experiment in modeling personality with Qwen2.5. Text and music signals condition a small adapter on a frozen language model. A comparison demo puts experimental outputs alongside prompt-based baselines, with evaluation covering similarity, persona, and authenticity.</p></div><div class="detail-section"><h4>My role</h4><p>Model experimentation and evaluation: developed the conditioning pipeline, compared model configurations, and built the live comparison demo.</p></div><div class="detail-section"><h4>Stack &amp; tools</h4><ul class="stack-list"><li>Python</li><li>Qwen2.5</li><li>Multimodal embeddings</li><li>Prefix adapter</li><li>Model evaluation</li></ul></div></div>
+          <div class="project-details"><div class="detail-section"><h4>Project</h4><p>An experiment in modeling personality with Qwen2.5. Text and music signals condition a small adapter on a frozen language model. A comparison demo puts experimental outputs alongside prompt-based baselines, with evaluation covering similarity, persona, and authenticity.</p></div><div class="detail-section"><h4>My role</h4><p>Model experimentation and evaluation: developed the conditioning pipeline, compared model configurations, and built the live comparison demo.</p></div><div class="detail-section"><h4>Stack &amp; tools</h4><ul class="stack-list"><li>Python</li><li>Qwen2.5</li><li>Multimodal embeddings</li><li>Prefix adapter</li><li>Model evaluation</li></ul></div><span class="repo-coming-soon">Repository coming soon</span></div>
         </details>
         <details class="project" id="project-rewear">
           <summary class="project-summary"><div class="visual cover rewear"><img class="project-picture" src="assets/rewear.jpg" alt="ReWear project screenshot" loading="lazy" hidden><span class="ghost">02 / TEAM PROJECT</span><strong>RE<br>WEAR</strong><span class="image-label">PROJECT IMAGE</span></div><div class="project-body"><span class="project-kicker">Full stack / Sustainability</span><h3>ReWear</h3><p>A team-built wardrobe app for organizing clothes and outfits.</p><span class="expand-label"><span class="closed-label">Read about the project</span><span class="open-label">Close project details</span><span class="toggle-icon" aria-hidden="true"></span></span></div></summary>
@@ -126,9 +145,14 @@
       <section class="section contact" id="contact" aria-labelledby="contact-title"><div class="section-head"><h2 id="contact-title">Connect</h2><span class="number">03 / CONTACT</span></div><a class="contact-line" href="https://github.com/immagirlboss" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a></section>
     </main><footer><span>© 2026 Akbota Kengeskhan</span><button class="animation-control" type="button" aria-pressed="false">Pause animation</button></footer>
   </div>
+<dialog class="project-dialog" aria-labelledby="dialog-project-title">
+  <div class="dialog-toolbar"><span class="dialog-caption">Selected work / Project details</span><button class="dialog-close" type="button" autofocus aria-label="Close project and return to projects">Back to projects <span aria-hidden="true">×</span></button></div>
+  <div class="dialog-content"></div>
+</dialog>
 <script>
 // Images appear automatically when their documented filenames exist.
-document.querySelectorAll('.project-picture, .portrait-picture').forEach((image) => {
+function initializePictures(root) {
+root.querySelectorAll('.project-picture, .portrait-picture').forEach((image) => {
  const show = () => {
   if (!image.naturalWidth) return;
   image.hidden = false;
@@ -141,6 +165,48 @@ document.querySelectorAll('.project-picture, .portrait-picture').forEach((image)
  });
  if (image.complete) show();
 });
+}
+initializePictures(document);
+
+const projectDialog = document.querySelector('.project-dialog');
+const dialogContent = projectDialog.querySelector('.dialog-content');
+let activeSummary = null;
+let previousOverflow = '';
+if (typeof projectDialog.showModal === 'function') {
+ document.querySelector('.projects').classList.add('modal-projects');
+ document.querySelectorAll('.project-summary').forEach((summary) => {
+  summary.setAttribute('aria-haspopup', 'dialog');
+  summary.addEventListener('click', (event) => {
+   event.preventDefault();
+   const project = summary.closest('.project');
+   activeSummary = summary;
+   dialogContent.replaceChildren();
+   ['.visual', '.project-body', '.project-details'].forEach((selector) => {
+    const copy = project.querySelector(selector).cloneNode(true);
+    copy.querySelectorAll('[id]').forEach((element) => element.removeAttribute('id'));
+    dialogContent.append(copy);
+   });
+   dialogContent.querySelector('h3').id = 'dialog-project-title';
+   dialogContent.querySelectorAll('img').forEach((image) => { image.loading = 'eager'; });
+   initializePictures(dialogContent);
+   previousOverflow = document.body.style.overflow;
+   document.body.style.overflow = 'hidden';
+   projectDialog.showModal();
+   projectDialog.scrollTop = 0;
+  });
+ });
+ projectDialog.querySelector('.dialog-close').addEventListener('click', () => projectDialog.close());
+ projectDialog.addEventListener('click', (event) => {
+  const rect = projectDialog.getBoundingClientRect();
+  if (event.target === projectDialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) projectDialog.close();
+ });
+ projectDialog.addEventListener('close', () => {
+  document.body.style.overflow = previousOverflow;
+  dialogContent.replaceChildren();
+  activeSummary?.focus({ preventScroll: true });
+ });
+}
+
 const motionButton = document.querySelector('.animation-control');
 const flower = document.querySelector('.lily img');
 motionButton.addEventListener('click', () => {
