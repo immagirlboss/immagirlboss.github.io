@@ -81,3 +81,12 @@ Each “How it works” section now begins with a project-specific SVG block dia
 components, technologies, directional arrows, and data labels. Vertical versions
 are used on small screens so diagrams stay readable. The explanatory text follows
 the diagram. All diagrams are simplified views of the documented project scope.
+
+## Tailored architecture illustrations
+
+Each project uses a distinct visual vocabulary: a 21-landmark hand and classifier
+for Ryoiki Tenkai; messages, retrieval index, and adapters for Digital Twin;
+wardrobe records and entity relationships for ReWear; OCR regions for MangaLens;
+product capture and validated drafts for VRify; session isolation and inference
+for BA Eats; a grid and agent cycle for Soul Society; and lesson/editor/browser
+views for Crepiks. Mobile diagrams reflow the same illustrations vertically.
