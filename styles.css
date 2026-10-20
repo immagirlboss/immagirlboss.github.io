@@ -76,9 +76,6 @@ details[open] > summary .when-open { display: inline; }
 .earlier p { font-size: 14px; color: var(--muted); }
 .earlier > a { font-size: 12px; }
 .section-intro { max-width: 420px; margin-bottom: 50px; }
-.research { display: grid; grid-template-columns: 1fr 1.3fr; gap: 9vw; background: #f8f9fb; }
-.research .eyebrow { margin-bottom: 18px; }
-.research-copy { max-width: 640px; font-size: 14px; color: var(--muted); }
 .textlink { display: inline-block; margin-top: 8px; font-size: 12px; color: var(--ink); }
 .expertise-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 65px; }
 .expertise-grid h3 { font-size: 21px; margin-bottom: 22px; }
@@ -151,7 +148,7 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
  .project-top { flex-direction: row; gap: 16px; }
  .project-top > .project-link { margin: 0; }
  .project h4 { font-size: 25px; }
- .research,.experience { grid-template-columns: 1fr; gap: 5px; }
+ .experience { grid-template-columns: 1fr; gap: 5px; }
  .section-intro { margin-bottom: 35px; }
  .expertise-grid { grid-template-columns: 1fr; gap: 50px; }
  .experience-list article { grid-template-columns: 80px minmax(0,1fr); gap: 20px; }
@@ -168,3 +165,26 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
  .project-media figcaption { padding: 12px; font-size: 9px; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
+
+/* Three small corner accents, kept out of the content and pointer path. */
+.floral-symbols { position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none; }
+.hero, .expertise, .contact { position: relative; }
+.corner-lily { position: absolute; width: 58px; height: auto; opacity: .52; pointer-events: none; user-select: none; }
+.lily-hero { top: 70px; right: var(--gutter); transform: rotate(16deg); }
+.lily-skills { top: 36px; right: 38px; width: 46px; transform: rotate(-22deg); }
+.lily-contact { bottom: 14px; left: 27px; width: 38px; transform: rotate(26deg); }
+.corner-lily use { transform-origin: 60px 55px; animation: lily-bloom 24s ease-in-out infinite; }
+.lily-skills use { animation-delay: -8s; }
+.lily-contact use { animation-delay: -16s; }
+@keyframes lily-bloom {
+  0%, 100% { transform: scale(.76) rotate(-5deg); opacity: .7; }
+  25%, 70% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+@media(max-width:760px) {
+  .lily-hero { width: 43px; top: 17px; right: 27px; }
+  .lily-skills { width: 35px; top: 18px; right: 24px; }
+  .lily-contact { display: none; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .corner-lily use { animation: none; transform: none; opacity: 1; }
+}

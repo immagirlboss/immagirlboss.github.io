@@ -7,7 +7,6 @@ No build step, dependencies, third-party scripts, or external fonts.
 
 - Introduction: software engineering and applied AI.
 - Selected projects, grouped by theme.
-- Digital Twin evaluation note with preliminary validation results.
 - Technical skills.
 - Experience and education.
 - Contact links to GitHub and LinkedIn.
@@ -62,3 +61,12 @@ The supplied project screenshots (`digital-twin.jpg`, `rewear.jpg`,
 entries. The original `portrait.jpg` is retained as an available asset.
 The published Digital Twin V3 validation findings and Crepiks grant milestone
 are retained in the redesigned project content.
+
+## Decorative motion
+
+Three original, small pale-red tiger lilies accent the hero, skills, and contact
+corners. The contact flower is omitted on phones. The slow, staggered bloom
+uses CSS transforms; decorations are hidden from assistive technology and never
+receive pointer input. Reduced-motion preferences disable blooming.
+The standalone Digital Twin research note has been removed; detailed technical
+notes remain within its project window.
