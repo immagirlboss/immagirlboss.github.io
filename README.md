@@ -64,12 +64,11 @@ are retained in the redesigned project content.
 
 ## Decorative motion
 
-Three original, small pale-red spider lilies accent the hero, skills, and contact
-corners. The contact flower is omitted on phones. The slow, staggered bloom
-uses CSS transforms; decorations are hidden from assistive technology and never
-receive pointer input. Reduced-motion preferences disable blooming.
-The standalone Digital Twin research note has been removed; detailed technical
-notes remain within its project window.
+One small pale-red spider lily sits in the hero corner. It uses the existing
+transparent `assets/spider-lily.png` artwork. Radial segments unfold separately
+while the overall bloom opens and closes on a slow 36-second cycle. The flower
+is decorative, ignores pointer events, and stays clear of the text. Reduced-motion
+preferences show the fully open flower without animation.
 
 ## Project technology explanations
 
@@ -78,6 +77,7 @@ inputs, processing, and outputs with the relevant technologies. These are based
 on the repository documentation and the supplied project material. Crepiks is
 explicitly described as frontend scope. On narrow screens the steps stack.
 
-Spider lily decorations use separate petal-unfurling and stamen-spreading
-animations over 32 seconds, following the supplied reference’s curled petals
-and long filaments. Reduced-motion preferences show the flowers fully open.
+Each “How it works” section now begins with a project-specific SVG block diagram:
+components, technologies, directional arrows, and data labels. Vertical versions
+are used on small screens so diagrams stay readable. The explanatory text follows
+the diagram. All diagrams are simplified views of the documented project scope.
