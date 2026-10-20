@@ -5,33 +5,40 @@ No build step, dependencies, third-party scripts, or external fonts.
 
 ## Sections
 
-1. Introduction with an original SVG system map.
-2. Selected projects, directly after the introduction, grouped by theme.
-3. Digital Twin case study: retrieval architecture, decisions, and limitations.
-4. Expertise tied to concrete project examples.
-5. Technical approach illustrated by engineering decisions.
-6. Experience and education, followed by About and contact.
+- Introduction: software engineering and applied AI.
+- Selected projects, grouped by theme.
+- Digital Twin evaluation note with preliminary validation results.
+- Technical skills.
+- Experience and education.
+- Contact links to GitHub and LinkedIn.
 
-All eight project entries, including Crepiks, expand to show a local picture,
-caption, full-size image link, and relevant technical context. Expanded project
-cards use the full content width. Screenshots retain their original colors.
+The page uses white and light grey, consistent name typography, generous spacing,
+and minimal borders. Abstract hero diagrams and the former Approach and About
+sections have been removed.
 
-The visual direction combines restrained editorial layouts with a futuristic
-white and cool grey palette, fine technical grids, and original system diagrams.
+## Project windows
+
+View project opens a native modal dialog containing the project's screenshot,
+technical notes, and repository link. Close it with the Close button, Escape, or
+by clicking outside the window. Focus returns to the original project control,
+and the underlying list keeps its scroll position. Native dialog behavior traps
+focus and makes the background inactive while open. Without JavaScript or native
+dialog support, the same content remains accessible through inline disclosures.
+
+All eight entries have a local image and a full-size link. Real project
+screenshots are preserved; BA Eats uses a labeled system illustration.
 
 ## Update
 
-Edit content in `index.html` and visual styles in `styles.css`.
-Keep project entries in their corresponding `data-group` sections. Theme filters
-progressively enhance the page; all projects and native disclosures work without
-JavaScript. In-page links reveal a project if its theme was filtered out.
-Preserve prototype labels, contribution boundaries, and evaluation limitations.
-Do not invent dates, metrics, credentials, or employment history.
+Edit content in `index.html` and styles in `styles.css`.
+Keep each project in its corresponding `data-group` section. Theme filters
+progressively enhance the page. Preserve prototype labels, contribution
+boundaries, and evaluation limitations.
 
 ## Preview and publish
 
 Run `python3 -m http.server 8000` from the repository root.
-Publish the main branch from the repository root with GitHub Pages.
+GitHub Pages publishes the main branch from the repository root.
 The profile repository is `immagirlboss.github.io`.
 
 ## Project image sources
