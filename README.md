@@ -64,9 +64,20 @@ are retained in the redesigned project content.
 
 ## Decorative motion
 
-Three original, small pale-red tiger lilies accent the hero, skills, and contact
+Three original, small pale-red spider lilies accent the hero, skills, and contact
 corners. The contact flower is omitted on phones. The slow, staggered bloom
 uses CSS transforms; decorations are hidden from assistive technology and never
 receive pointer input. Reduced-motion preferences disable blooming.
 The standalone Digital Twin research note has been removed; detailed technical
 notes remain within its project window.
+
+## Project technology explanations
+
+Every project window includes a three-step “How it works” schematic, describing
+inputs, processing, and outputs with the relevant technologies. These are based
+on the repository documentation and the supplied project material. Crepiks is
+explicitly described as frontend scope. On narrow screens the steps stack.
+
+Spider lily decorations use separate petal-unfurling and stamen-spreading
+animations over 32 seconds, following the supplied reference’s curled petals
+and long filaments. Reduced-motion preferences show the flowers fully open.
