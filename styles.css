@@ -209,3 +209,33 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
  .technology-diagram { max-width: 440px; margin-inline: auto; }
  .technology-flow { gap: 24px; }
 }
+
+/* Featured work stays part of the theme filters without duplicate entries. */
+.featured-preview { display: block; margin-bottom: 24px; overflow: hidden; background: var(--soft); border-radius: 5px; }
+.featured-preview img { display: block; width: 100%; aspect-ratio: 16 / 10; height: auto; object-fit: cover; object-position: top; transition: transform .2s ease; }
+.featured-preview:hover img { transform: scale(1.025); }
+.featured-group .group-head .eyebrow { margin-bottom: 10px; }
+.research { display: grid; grid-template-columns: 1fr 1.3fr; gap: 9vw; background: var(--soft); }
+.research .eyebrow { margin-bottom: 16px; }
+.research-copy h3 { margin: 22px 0 20px; max-width: 28ch; }
+.research-copy p { color: var(--muted); max-width: 65ch; }
+.research-status { display: inline-block; padding: 4px 12px; border: 1px solid #cbd2dc; border-radius: 20px; font: 12px/1.6 var(--mono); }
+.research-copy .research-note { font-size: 13px; margin-bottom: 0; }
+.contact-links { flex-wrap: wrap; justify-content: flex-end; gap: 18px 30px; }
+.contact-links a { overflow-wrap: anywhere; }
+.contact-links span { margin-left: 8px; }
+.hero-links { flex-wrap: wrap; }
+@media(max-width:760px) {
+ .research { grid-template-columns: 1fr; gap: 0; }
+ .contact-links { justify-content: flex-start; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .featured-preview img { transition: none; }
+ .featured-preview:hover img { transform: none; }
+}
+
+.project-demo { margin: 0 0 38px; background: var(--soft); }
+.project-demo video { display: block; width: 100%; max-height: 66vh; background: #171b23; }
+.project-demo figcaption { padding: 14px 18px; color: var(--muted); font-size: 13px; }
+.project-demo figcaption p { margin: 4px 0 8px; }
+.project-demo figcaption a { text-decoration: underline; text-underline-offset: 3px; }

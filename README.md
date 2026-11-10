@@ -90,3 +90,10 @@ wardrobe records and entity relationships for ReWear; OCR regions for MangaLens;
 product capture and validated drafts for VRify; session isolation and inference
 for BA Eats; a grid and agent cycle for Soul Society; and lesson/editor/browser
 views for Crepiks. Mobile diagrams reflow the same illustrations vertically.
+
+## November 2026 iteration
+
+ReWear, Digital Twin, and Ryoiki Tenkai are pinned with visible previews. Pinned
+projects retain theme filtering and their existing detail dialogs. AI safety
+research is labeled in progress, with no results claimed. Contact includes the
+Minerva email and the supplied one-page résumé PDF, also linked in the hero.
