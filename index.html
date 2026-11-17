@@ -154,13 +154,16 @@ if (typeof projectDialog.showModal === 'function') {
  document.querySelectorAll('.project, .earlier').forEach(project => {
   const heading = project.querySelector('h4, h3');
   const summary = project.querySelector('details > summary');
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.className = 'project-title';
-  button.textContent = heading.textContent;
-  button.setAttribute('aria-haspopup', 'dialog');
-  button.addEventListener('click', () => openProject(summary, button));
-  heading.replaceChildren(button);
+  const link = document.createElement('a');
+  link.href = '#' + project.id;
+  link.className = 'project-title';
+  link.textContent = heading.textContent;
+  link.setAttribute('aria-haspopup', 'dialog');
+  link.addEventListener('click', event => {
+   event.preventDefault();
+   openProject(summary, link);
+  });
+  heading.replaceChildren(link);
  });
  document.querySelectorAll('.project details > summary, .earlier details > summary').forEach(summary => {
   summary.setAttribute('aria-haspopup', 'dialog');
