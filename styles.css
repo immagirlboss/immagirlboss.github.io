@@ -89,6 +89,8 @@ dd { margin: 4px 0 18px; font-size: 13px; }
 .experience-list h3 { font-size: 20px; margin-bottom: 14px; }
 .experience-list p { font-size: 14px; color: var(--muted); margin: 0 0 12px; }
 .experience-list .role { font-size: 12px; }
+.experience-list ul { margin: 0; padding-inline-start: 18px; font-size: 14px; color: var(--muted); }
+.experience-list li + li { margin-top: 8px; }
 .contact { display: flex; align-items: baseline; justify-content: space-between; gap: 35px; padding: 90px var(--gutter); background: #f8f9fb; }
 .contact-links { display: flex; gap: 55px; font-size: 16px; }
 .contact-links span { margin-left: 20px; color: var(--muted); }
