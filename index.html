@@ -119,7 +119,7 @@ const projectDialog = document.querySelector('.project-dialog');
 const dialogContent = projectDialog.querySelector('.dialog-content');
 let activeSummary = null;
 let savedOverflow = '';
-function openProject(summary) {
+function openProject(summary, trigger = summary) {
  const project = summary.closest('.project, .earlier');
  const heading = project.querySelector('h4, h3');
  const title = document.createElement('h2');
@@ -144,13 +144,24 @@ function openProject(summary) {
   node.querySelectorAll('img').forEach(image => { image.loading = 'eager'; });
  });
  dialogContent.replaceChildren(headingBlock, ...content);
- activeSummary = summary;
+ activeSummary = trigger;
  savedOverflow = document.body.style.overflow;
  document.body.style.overflow = 'hidden';
  projectDialog.showModal();
  projectDialog.scrollTop = 0;
 }
 if (typeof projectDialog.showModal === 'function') {
+ document.querySelectorAll('.project, .earlier').forEach(project => {
+  const heading = project.querySelector('h4, h3');
+  const summary = project.querySelector('details > summary');
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'project-title';
+  button.textContent = heading.textContent;
+  button.setAttribute('aria-haspopup', 'dialog');
+  button.addEventListener('click', () => openProject(summary, button));
+  heading.replaceChildren(button);
+ });
  document.querySelectorAll('.project details > summary, .earlier details > summary').forEach(summary => {
   summary.setAttribute('aria-haspopup', 'dialog');
   summary.addEventListener('click', event => {
@@ -160,7 +171,7 @@ if (typeof projectDialog.showModal === 'function') {
  });
  document.querySelectorAll('[data-open-project]').forEach(link => link.addEventListener('click', event => {
   event.preventDefault();
-  openProject(document.getElementById(link.dataset.openProject).querySelector('summary'));
+  openProject(document.getElementById(link.dataset.openProject).querySelector('summary'), link);
  }));
  projectDialog.querySelector('.dialog-close').addEventListener('click', () => projectDialog.close());
  projectDialog.addEventListener('click', event => {
